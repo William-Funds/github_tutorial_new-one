@@ -33,18 +33,18 @@ def build_streamlit_dashboard(visual_bundle: Dict[str, Any]) -> Dict[str, Any]:
     - widgets: list[str]
     - sample_predictions: list[dict]
     """
-<<<<<<< HEAD
+
     visual_bundle = visual_bundle or {}
     dataset_name = visual_bundle.get("dataset_name", "school_garden_water_need")
-=======
+
     dataset_name = visual_bundle.get("dataset_name", "unknown_dataset")
->>>>>>> b083eca4ef8e9a95f278691d39a7a2172ae824d5
+
     metrics = visual_bundle.get("metrics", {})
     figure_paths = visual_bundle.get("figure_paths", [])
     chart_notes = visual_bundle.get("chart_notes", [])
     sample_predictions = visual_bundle.get("sample_predictions", [])
 
-<<<<<<< HEAD
+
     title = visual_bundle.get("title") or f"{_prettify(dataset_name)} Dashboard"
 
     # "widgets" is a simple, ordered plan of what the page will render. Keeping
@@ -58,7 +58,7 @@ def build_streamlit_dashboard(visual_bundle: Dict[str, Any]) -> Dict[str, Any]:
         widgets.append(f"caption: {note}")
     if sample_predictions:
         widgets.append("table: sample predictions (actual vs predicted)")
-=======
+
     # Build a friendly page title. Use the one passed in if present,
     # otherwise turn "school_garden_water_need" into "School Garden Water Need".
     title = visual_bundle.get("title")
@@ -73,7 +73,7 @@ def build_streamlit_dashboard(visual_bundle: Dict[str, Any]) -> Dict[str, Any]:
     widgets += [f"note:{note}" for note in chart_notes]
     if sample_predictions:
         widgets.append("predictions_table")
->>>>>>> b083eca4ef8e9a95f278691d39a7a2172ae824d5
+
 
     return {
         "dataset_name": dataset_name,
@@ -85,7 +85,7 @@ def build_streamlit_dashboard(visual_bundle: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-<<<<<<< HEAD
+
 def _prettify(name: str) -> str:
     """Turn 'school_garden_water_need' into 'School Garden Water Need'."""
     return name.replace("_", " ").title()
@@ -170,7 +170,7 @@ def _render() -> None:
 
 if __name__ == "__main__":
     _render()
-=======
+
 def render_dashboard(dashboard: Dict[str, Any]) -> None:
     """
     Draw the dashboard payload on a Streamlit page.
@@ -229,4 +229,4 @@ if __name__ == "__main__":
     # Run with: streamlit run to_complete/06_streamlit_app.py
     dashboard = build_streamlit_dashboard(_demo_bundle())
     render_dashboard(dashboard)
->>>>>>> b083eca4ef8e9a95f278691d39a7a2172ae824d5
+
